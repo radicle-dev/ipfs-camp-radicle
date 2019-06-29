@@ -1,5 +1,7 @@
 ;; "12D3KooWKmHZGDaNzWbuCnyebQC4WkaiituTEVj19rGb1f9X1JFi"
 (import prelude/ref '[modify-ref] :unqualified)
+(import prelude/strings '[unlines] :unqualified)
+(import prelude/patterns :unqualified)
 
 (def logs
   "Chat logs"
@@ -8,7 +10,7 @@
 (def say
   "Add a message"
   (fn [msg]
-      (modify-ref (fn [r] (add-right msg r)) logs)))
+      (modify-ref logs (fn [r] (add-right msg r)))))
 
 (def query
   (fn []

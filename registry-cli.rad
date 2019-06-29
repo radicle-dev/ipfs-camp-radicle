@@ -12,7 +12,7 @@ language, this can be written in any language.
 (load! (find-module-file! "prelude.rad"))
 (import prelude/machine '[new-machine! send-code!] :unqualified)
 
-(def machine "12D3KooWLXpRzjvt7F2kFUeGeiR5g14sJhcaatb5gZMd4otM71Ht")
+(def machine "12D3KooWNMnsuA6ss2uHecsbbzAMRyxea1HvzVMrFeqonDq2wqV9")
 
 
 
@@ -38,7 +38,7 @@ language, this can be written in any language.
 (def list-projects
   "List all the projects in a registry machine."
   (fn []
-      (print! (machine/query! machine '(query)))))
+      (put-str! (machine/query! machine '(query)))))
 
 (def star-project
   ""
